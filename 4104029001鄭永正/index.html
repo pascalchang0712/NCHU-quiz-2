@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jquery</title>
+	<meta charset="utf-8">
+</head>	
+    <body>
+       
+        <h3 id="web">Web programming</h2>
+		<ul id="content">Content
+			<li id="html">HTML</li>
+			<li id="css">CSS</li>
+			<li>DOM</li>
+			<li>JavaScript</li>
+			<li id="jsp">JSP</li>
+		</ul>	
+		<input type="button" value="以JS修改元素內容" onClick="changeText();">
+		<input type="button" value="顯示學號" onClick="showID();">
+		<input id = "changecss" type="button" value="以JQuery修改CSS">	
+			
+			
+       <script src="jquery-3.2.0.js"></script>
+       <script src="jquery-3.2.0.min.js"></script>
+       <!-- <script src="jquery-3.2.0.min.map"></script> -->
+
+       <script>
+			function showID(){
+				document.getElementById("web").innerHTML +="    "+"4104029001";
+			}
+			function alert1(){
+			alert("hello");
+		}
+			function changeText(){
+			
+			var html = document.getElementById("html");
+			var css = document.getElementById("css");
+			var newnode = document.createElement("li");
+			var newtextnode = document.createTextNode("MYSQL");
+			
+			newnode.appendChild(newtextnode);
+			document.getElementById("jsp").appendChild(newnode);
+			html.innerHTML = "HTML5";
+			css.innerHTML = "css3";
+
+		}
+		$(document).ready(function(){
+			$('#changecss').mouseenter(function() { 
+			//alert("heel");
+			$('#content').css('color','red');
+			$('#content').css('font-size','30px');
+			})
+			$('#changecss').mouseleave(function() { 
+			//alert("heel");
+			$('#content').css('color','black');
+			$('#content').css('font-size','16px');
+			})	
+		
+		});		
+          
+       </script>
+    </body>
+
+</html>
